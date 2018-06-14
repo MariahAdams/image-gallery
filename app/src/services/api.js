@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/api';
+const URL = '/api';
 const ALBUMS_URL = `${URL}/albums`;
 const ALBUMSTATS_URL = `${URL}/albums/stats`;
 const IMAGES_URL = `${URL}/images`;

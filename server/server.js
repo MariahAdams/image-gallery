@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 
 const client = require('./db-client');
@@ -155,6 +157,7 @@ app.delete('/api/images/:id', (req, res, next) =>{
   })
     .catch(next);
 });
+
 /*eslint-disable-next-line*/
 app.use((err, req, res, next) => {
   console.log('***SERVER ERROR**\n', err);
@@ -164,4 +167,5 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message });
 });
 
-app.listen(3000, () => console.log('server running...'));
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log('server running...'));
