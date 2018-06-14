@@ -57,7 +57,7 @@ export default {
         deleteAlbum(this.$route.params.id)
           .then(res => {
             if(res.removed) {
-              this.$router.push('albums');
+              this.$router.push('/albums');
             }
           })
           .catch(err => {
