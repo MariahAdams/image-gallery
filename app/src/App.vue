@@ -12,7 +12,6 @@
     <hr />
 
     <router-view
-      :album="albums"
       :albumStats="albumStats"
     ></router-view>
 
@@ -20,23 +19,15 @@
 </template>
 
 <script>
-import { getAlbums, getAlbumStats } from './services/api';
+import { getAlbumStats } from './services/api';
 
 export default {
   data() {
     return {
-      albums: null,
       albumStats: null
     };
   },
   created() {
-    getAlbums()
-      .then(albumlist => {
-        this.albums = albumlist;
-      })
-      .catch(err => {
-        this.error = err;
-      }),
     getAlbumStats()
       .then(albumlist => {
         this.albumStats = albumlist;
@@ -49,6 +40,7 @@ export default {
 </script>
 
 <style>
+
 h1 {
   font-family: fantasy;
 }

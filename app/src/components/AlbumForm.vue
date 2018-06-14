@@ -13,7 +13,7 @@
           v-model="change.description"></textarea>
       </label>
       <label>
-        <button type="submit">Add</button>
+        <button type="submit">Add Album</button>
       </label>
     </form>
   </section>
